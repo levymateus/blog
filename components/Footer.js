@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { GitHub, Twitter } from "react-feather"
+import { GitHub, Linkedin } from "react-feather"
 import Text from "@components/Text"
 import If from "@components/If"
 import useConfig from "@hooks/useConfig"
@@ -33,9 +33,9 @@ function Footer() {
             <GitHub width={14} height={14} /> <span className="pl-1">Github</span>
           </span>
         </NavLink>
-        <NavLink href="/twitter">
+        <NavLink href="https://www.linkedin.com/in/levy-mateus-macedo/" target="_blank">
           <span className="text-black hover:text-indigo-600 dark:hover:text-white dark:text-neutral-500 flex items-center">
-            <Twitter width={14} height={14} /> <span className="pl-1">Twitter</span>
+            <Linkedin width={14} height={14} /> <span className="pl-1">Linkedin</span>
           </span>
         </NavLink>
       </ul>
