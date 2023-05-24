@@ -2,8 +2,8 @@ import { createContext, useState } from "react"
 
 export const LoadingStateContext = createContext({ isLoading: true, setIsLoading: () => {} })
 
-const LoadingState = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(true)
+const LoadingState = ({ initialState = true, children }) => {
+  const [isLoading, setIsLoading] = useState(initialState)
   return <LoadingStateContext.Provider value={{ isLoading, setIsLoading }}>
     {children({ isLoading, setIsLoading })}
   </LoadingStateContext.Provider>
