@@ -21,14 +21,14 @@ const App = ({ Component, pageProps }) => {
   })
 
   return (
-    <Layout>
-      <Head>
-        <title className="capitalize">{pageProps.site.title}</title>
-      </Head>
-      <RemoteConfig>
+    <RemoteConfig>
+      <Layout>
+        <Head>
+          <title className="capitalize">{pageProps.site.title}</title>
+        </Head>
         <Component {...pageProps} />
-      </RemoteConfig>
-    </Layout>
+      </Layout>
+    </RemoteConfig>
   )
 }
 
