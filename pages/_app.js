@@ -12,7 +12,6 @@ import RemoteConfig from "context/RemoteConfig"
 import client from "@utils/client"
 
 const App = ({ Component, pageProps }) => {
-  const router = useRouter()
 
   useTheme()
   useProgress()
@@ -24,14 +23,14 @@ const App = ({ Component, pageProps }) => {
   })
 
   return (
-    <RemoteConfig>
-      <Layout>
-        <Head>
-          <title className="capitalize">{pageProps.site.title}</title>
-        </Head>
+    <Layout>
+      <Head>
+        <title className="capitalize">{pageProps.site.title}</title>
+      </Head>
+      <RemoteConfig>
         <Component {...pageProps} />
-      </Layout>
-    </RemoteConfig>
+      </RemoteConfig>
+    </Layout>
   )
 }
 
