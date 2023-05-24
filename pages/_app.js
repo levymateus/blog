@@ -6,7 +6,6 @@ import "@styles/globals.css"
 import Layout from "@components/Layout"
 import useProgress from "@hooks/useProgress"
 import useEventListener from "@hooks/useEventListener"
-import { useRouter } from "next/router"
 import useTheme from "@hooks/useTheme"
 import RemoteConfig from "context/RemoteConfig"
 import client from "@utils/client"
@@ -23,14 +22,14 @@ const App = ({ Component, pageProps }) => {
   })
 
   return (
-    <Layout>
-      <Head>
-        <title className="capitalize">{pageProps.site.title}</title>
-      </Head>
-      <RemoteConfig>
+    <RemoteConfig>
+      <Layout>
+        <Head>
+          <title className="capitalize">{pageProps.site.title}</title>
+        </Head>
         <Component {...pageProps} />
-      </RemoteConfig>
-    </Layout>
+      </Layout>
+    </RemoteConfig>
   )
 }
 
