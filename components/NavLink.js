@@ -8,11 +8,10 @@ const NavLink = ({
   href,
   children = '',
   size = 'xl',
-  accessKey,
   ...props
 }) => {
   const { asPath, route } = useRouter()
-  return <Link href={href} accessKey={accessKey} {...props} passHref>
+  return <Link href={href} {...props} passHref>
     <Text
       className={clsx("px-4 py-2", {
         'font-bold text-blue-600 dark:text-teal-500': route === href || asPath === href

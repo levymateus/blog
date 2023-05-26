@@ -32,3 +32,4 @@
 .next
 *.d.ts
 *.env*
+env.development

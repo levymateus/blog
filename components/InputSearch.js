@@ -1,26 +1,17 @@
 import InputText, { Input } from "@components/Input"
-import { useState, useRef, useEffect } from "react"
-import useEventListener from "@hooks/useEventListener"
+import { useState, useRef } from "react"
 import { Search, X } from "react-feather"
 import { useRouter } from "next/router"
 
 let timeoutId = null
 
 const InputSeach = ({ value, setActive, onCancel, setValue, onChange }) => {
-  const [isAltKeyPressed, setAltKeyIsPressed] = useState(false)
   const [inputValue, setInputValue] = useState('')
   const inputSearchRef = useRef()
   const router = useRouter()
 
-  useEventListener('keydown', (evt) => {
-    setAltKeyIsPressed(evt.altKey)
-  })
-
-  useEventListener('keyup', (evt) => {
-    setAltKeyIsPressed(evt.altKey)
-  })
-
   const handleChange = (evt) => {
+
     setInputValue(evt.target.value)
 
     if (timeoutId) {
@@ -63,21 +54,13 @@ const InputSeach = ({ value, setActive, onCancel, setValue, onChange }) => {
     window.focus()
   }
 
-  useEffect(() => {
-    () => {
-      clearTimeout(timeoutId)
-      timeoutId = null
-    }
-  }, [])
-
   return <InputText className="mt-3">
     <Input.Input
       ref={inputSearchRef}
       type="text"
-      accessKey="/"
       id="blog-input-search"
       value={inputValue}
-      placeholder={isAltKeyPressed ? 'Search: Alt + /' : 'Search'}
+      placeholder='Search'
       blurHotkey="Escape"
       onChange={handleChange}
       onFocus={handleFocus}
