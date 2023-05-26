@@ -20,8 +20,8 @@ export default function Breadcumb() {
         variant="link"
         onClick={() => {
           const stepsBack = pathArr.length - index - 1
-          if (stepsBack) {
-            history.go(-stepsBack)
+          if (stepsBack && window) {
+            window.history.go(-stepsBack)
           }
         }}
       >

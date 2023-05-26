@@ -1,7 +1,6 @@
 import Heading from "@components/Heading"
 import PostMeta from "@components/PostMeta"
 import Markdown from "@components/Markdown"
-import { useRouter } from "next/router"
 import Breadcumb from "@components/Breadcumb"
 import useTimeout from "@hooks/useTimeout"
 import usePost from "@hooks/usePost"

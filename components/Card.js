@@ -82,7 +82,6 @@ function Card({ isLoading, setIsLoading }) {
                   onChange={handleInputChange}
                   blurHotkey="Escape"
                   value={values['email']}
-                  accessKey="c"
                   required
                   placeholder="you-email@email.com"
                 />

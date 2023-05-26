@@ -5,10 +5,8 @@ import Sidebar from "@components/Sidebar"
 import Animation from "@components/Animation"
 import useEventListener from "@hooks/useEventListener"
 import clsx from "clsx"
-import useStore from "@hooks/useStore"
 
 function Layout({ children }) {
-  const appBarState = useStore(({ appBarState }) => appBarState)
   const [animation, setAnimation] = useState()
 
   function handleToggleMenu(isOpen) {

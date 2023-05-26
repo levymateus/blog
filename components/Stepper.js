@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useReducer, useRef } from "react"
+import { createContext, useCallback, useContext, useReducer } from "react"
 
 const StepperContext = createContext({ step: 1 })
 
