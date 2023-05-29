@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { marked } from 'marked'
-import HLJS from 'highlight.js'
+import { highlight } from 'highlight.js'
 import clsx from 'clsx'
 
 const renderer = {
@@ -39,7 +39,7 @@ const renderer = {
       <div class="p-0 my-4 text-white dark:text-white flex flex-col bg-neutral-900 rounded border border-neutral-700">
         <div class="p-0 m-0 border-b text-base text-neutral-400 border-neutral-700 bg-neutral-800 rounded-t-sm px-4 py-2 ${filename ? 'display' : 'hidden'}">${filename}</div>
         <pre class="flex bg-neutral-900 py-3 px-4 rounded">
-          <code class="language-${language} bg-neutral-900">${HLJS.highlight(code, { language: language }).value}</code>
+          <code class="language-${language} bg-neutral-900">${highlight(code, { language: language }).value}</code>
         </pre>
       </div>
     `
