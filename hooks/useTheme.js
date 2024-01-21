@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react"
 
-function useTheme() {
+const useTheme = () => {
   const [theme, setTheme] = useState()
 
   const setLocalStorageTheme = useCallback((value) => {

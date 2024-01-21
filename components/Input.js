@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-function InputBase({ children, className, ...props }) {
+const InputBase = ({ children, className, ...props }) => {
   return <div className={clsx("flex items-center m-1 space-3 pr-3 pl-3 pt-4 pb-4 rounded border border-gray-400 dark:border-neutral-600 bg-white dark:bg-neutral-900 focus-within:ring-2 ring-teal-500", className)} {...props}>
     {children}
   </div>
@@ -29,7 +29,7 @@ const InputText = forwardRef(({ className, blurHotkey, focusHotkey, ...props }, 
 
 InputText.displayName = 'InputText'
 
-function InputIcon({ icon, className, ...props }) {
+const InputIcon = ({ icon, className, ...props }) => {
   const Icon = icon
   return <Icon className={clsx(className, "text-gray-400 dark:text-neutral-600 text-base")} weight="bold" {...props} />
 }

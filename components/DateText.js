@@ -1,7 +1,7 @@
 import Text from "@components/Text"
 import clsx from "clsx"
 
-function DateText({ date = new DateText(), isLoading = false, size = "sm" }) {
+const DateText = ({ date = new DateText(), isLoading = false, size = "sm" }) => {
   const datetimeformat = new Intl.DateTimeFormat('en-US', {
     dateStyle: 'medium',
   })

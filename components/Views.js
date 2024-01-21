@@ -2,7 +2,7 @@ import usePost from "@hooks/usePost"
 import clsx from "clsx"
 import { Eye } from "react-feather"
 
-function Views({ slug, size = 'base' }) {
+const Views = ({ slug, size = 'base' }) => {
   const [{ views, isLoading }] = usePost(slug)
   return <div className={clsx("flex items-center p-1", {
     "skeleton select-none hover:cursor-default pointer-events-none text-transparent rounded": isLoading

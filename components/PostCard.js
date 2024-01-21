@@ -5,7 +5,7 @@ import Text from "@components/Text"
 import clsx from "clsx"
 import LoadingState from "context/LoadingState"
 
-function PostCard({ slug, description, color = 'teal' }) {
+const PostCard = ({ slug, description, color = 'teal' }) => {
   return <LoadingState>
     {({ isLoading }) => <Link href={`/blog/${slug}`} className={clsx("flex grow rounded p-0.5", {
       "bg-rw-teal": color === 'teal',

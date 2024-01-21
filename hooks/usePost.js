@@ -5,7 +5,7 @@ import { msToHours } from "@utils/time"
 import useIsMounted from "@hooks/useIsMounted"
 import useIsLoading from "./useIsLoading"
 
-export default function usePost(slug) {
+const usePost = (slug) => {
   const [liked, setLiked] = useState(false)
   const [visited, setVisited] = useSessionStorage(slug, null)
   const { isLoading, setIsLoading } = useIsLoading()
@@ -56,3 +56,5 @@ export default function usePost(slug) {
 
   return [{ liked, views, isLoading }, { like, dislike, visualize }]
 }
+
+export default usePost

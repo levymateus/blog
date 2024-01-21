@@ -3,7 +3,7 @@ import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 
-function Snnipet({ slug, title, description, src, alt, className, ...props }) {
+const Snnipet = ({ slug, title, description, src, alt, className, ...props }) => {
   return <Link
     href={`/snippets/${slug}`}
     className={clsx("border border-neutral-900 dark:border-neutral-700 rounded p-6 hover:cursor-pointer", className)}

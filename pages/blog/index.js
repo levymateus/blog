@@ -10,7 +10,7 @@ import InputSeach from "@components/InputSearch"
 import useIsMounted from "@hooks/useIsMounted"
 import client from "@utils/client"
 
-function Blog({ blog, posts: postsProp }) {
+const Blog = ({ blog, posts: postsProp }) => {
   const [posts, { set }] = useList(postsProp)
   const isMounted = useIsMounted()
   const [searchIsActive, setSearchIsActive] = useState(false)
@@ -67,7 +67,7 @@ function Blog({ blog, posts: postsProp }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const { blog } = await client.fetch(`*[_type == "site"][0]{blog}`)
   const posts = await client.fetch(`*[_type == "post"]{
     "slug": slug.current,

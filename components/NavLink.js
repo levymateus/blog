@@ -4,12 +4,12 @@ import { useRouter } from "next/router"
 import clsx from "clsx"
 import Text from "@components/Text"
 
-function NavLink({
+const NavLink = ({
   href,
   children = '',
   size = 'xl',
   ...props
-}) {
+}) => {
   const { asPath, route } = useRouter()
   return <Link href={href} {...props} passHref>
     <Text

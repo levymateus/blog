@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document"
+import Body from "@components/Body"
 
 export default function Document() {
   return (
@@ -6,10 +7,10 @@ export default function Document() {
       <Head>
         <link rel="shortcut icon" href="/static/favicon.svg" />
       </Head>
-      <body className="dark:bg-black">
+      <Body>
         <Main />
         <NextScript />
-      </body>
+      </Body>
     </Html>
   )
 }

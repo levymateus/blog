@@ -1,5 +1,5 @@
 
-function max(array, callback) {
+const max = (array, callback) => {
   let max = 0
   array.forEach((value) => {
     const val = callback(value)

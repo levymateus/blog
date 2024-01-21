@@ -2,7 +2,7 @@ import { HiHeart, HiOutlineHeart } from "react-icons/hi"
 import usePost from "@hooks/usePost"
 import clsx from "clsx"
 
-function Likes({ slug }) {
+const Likes = ({ slug }) => {
   const [{ liked, isLoading }, { like, dislike }] = usePost(slug)
   return <div className="flex items-center">
     {liked ?

@@ -7,12 +7,12 @@ import DateText from "@components/DateText"
 import LoadingState from "context/LoadingState"
 import clsx from "clsx"
 
-export default function Post({
+const Post = ({
   title = '',
   shortText = '',
   date = new Date(),
   slug = ''
-}) {
+}) => {
   return <LoadingState>
     {({ isLoading }) => <div className="flex flex-col space-y-3">
       <Link href={`blog/${slug}`} className={clsx("w-fit", {
@@ -35,3 +35,5 @@ export default function Post({
     </div>}
   </LoadingState>
 }
+
+export default Post

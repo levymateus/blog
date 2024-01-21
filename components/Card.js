@@ -1,21 +1,20 @@
-import Heading from "@components/Heading"
-import Text from "@components/Text"
-import InputText, { Input } from "@components/Input"
 import Button from "@components/Button"
-import Stepper from "@components/Stepper"
-import TextArea from "@components/TextArea"
+import Heading from "@components/Heading"
 import If from "@components/If"
-import { ArrowRight } from "react-feather"
-import { useRouter } from "next/router"
-import { useRef, useEffect, useState } from "react"
-import { X } from "react-feather"
+import InputText, { Input } from "@components/Input"
+import Stepper from "@components/Stepper"
+import Text from "@components/Text"
+import TextArea from "@components/TextArea"
+import useSessionStorage from "@hooks/useSessionStorage"
 import useStore from "@hooks/useStore"
 import * as mail from "@lib/mail"
 import withLoading from "@utils/withLoading"
 import clsx from "clsx"
-import useSessionStorage from "@hooks/useSessionStorage"
+import { useRouter } from "next/router"
+import { useEffect, useRef, useState } from "react"
+import { ArrowRight, X } from "react-feather"
 
-function Card({ isLoading, setIsLoading }) {
+const Card = ({ isLoading, setIsLoading }) => {
   const emailInputRef = useRef()
   const [mailSent, setMailSent] = useSessionStorage('mail-sent', '')
   const [values, setValues] = useState({ text: '', email: '' })
@@ -23,7 +22,7 @@ function Card({ isLoading, setIsLoading }) {
   const hash = router.asPath.split('#')[1]
   const setAppBarIsOpen = useStore(({ setAppBarIsOpen }) => setAppBarIsOpen)
 
-  function handleInputChange(evt) {
+  const handleInputChange = (evt) => {
     setValues(prevValues => ({
       ...prevValues,
       [evt.target.name]: evt.target.value
@@ -47,7 +46,7 @@ function Card({ isLoading, setIsLoading }) {
       <Stepper
         maxSteps={2}
         onComplete={() => {
-          (async function() {
+          (async function () {
             setIsLoading(true)
             const isMailSent = await mail.send(values.email, values.text, values.email)
             setIsLoading(false)

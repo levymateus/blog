@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react"
 
 const ToggleContext = createContext({ value: false })
 
-function Toggle({ defaultValue = false, toggle, children }) {
+const Toggle = ({ defaultValue = false, toggle, children }) => {
   const [value, dispatch] = useReducer(toggle || ((prevState) => !prevState), defaultValue, (arg) => arg)
   return <ToggleContext.Provider value={{ value, dispatch }}>
     {children}
@@ -11,14 +11,14 @@ function Toggle({ defaultValue = false, toggle, children }) {
 
 Toggle.displayName = 'Toogle'
 
-function On({ children }) {
+const On = ({ children }) => {
   const { value, dispatch } = useContext(ToggleContext)
   return value ? children(dispatch) : null
 }
 
 On.displayName = 'Toggle.On'
 
-function Off({ children }) {
+const Off = ({ children }) => {
   const { value, dispatch } = useContext(ToggleContext)
   return !value ? children(dispatch) : null
 }

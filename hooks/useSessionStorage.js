@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState, useMemo } from "react"
 
-export default function useSessionStorage(key, initialValue) {
+const useSessionStorage = (key, initialValue) => {
   const initialState = useMemo(() => initialValue,[initialValue])
   const [storedValue, setStoredValue] = useState(initialState)
 
@@ -35,3 +35,5 @@ export default function useSessionStorage(key, initialValue) {
 
   return [storedValue, setValue];
 }
+
+export default useSessionStorage

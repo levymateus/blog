@@ -2,6 +2,7 @@
 
 # Dependencies
 /node_modules
+/analyze
 /.pnp
 .pnp.js
 
@@ -31,3 +32,4 @@
 .next
 *.d.ts
 *.env*
+env.development

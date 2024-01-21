@@ -16,15 +16,17 @@ const items = [
   { href: '/blog', name: 'Blog', duration: 1.2 }
 ]
 
-function Sidebar({ onSelectItem }) {
+const Sidebar = ({ onSelectItem }) => {
   const ref = useRef()
   const [list, { forEach, filter }] = useList(items)
+
+  // TODO: set sidebar open on keyboard 'alt' key pressed.
   const [isOpen, setOpen] = useStore(({ sidebarIsOpen, setSidebarOpen }) => [sidebarIsOpen, setSidebarOpen])
   const [isVisible, setVisible] = useState(false)
   const { config } = useConfig()
   const animation = isOpen ? "bounce-right" : "bounce-left"
 
-  function rearrange(pivot) {
+  const rearrange = (pivot) => {
     let step = 0.4
     forEach((_, index, array) => {
       if (pivot !== index) {

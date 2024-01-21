@@ -1,14 +1,14 @@
 import { Slot } from "@radix-ui/react-slot"
 import clsx from "clsx"
 
-function Text({
+const Text = ({
   size = 'base',
   asChild = false,
   variant = 'default',
   children = '',
   className = '',
   isLoading = false,
-}) {
+}) => {
   const Text = asChild ? Slot : 'span'
   const textSize = {
     'text-xs': size === 'xs', // 11px

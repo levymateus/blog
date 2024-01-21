@@ -23,7 +23,7 @@ function Post({ post }) {
   </LoadingState>
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const posts = await client.fetch(`*[_type == "post"]{
     "slug": slug.current
   }`)
@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
   const post = await client.fetch(`*[_type == "post" && slug.current == "${context.params.slug}"][0]{
     "slug": slug.current,
     title,

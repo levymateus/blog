@@ -1,7 +1,7 @@
 import { Slot } from "@radix-ui/react-slot"
 import clsx from "clsx"
 
-function Heading({ size = 'md', asChild = false, children = '', isLoading = false, className }) {
+const Heading = ({ size = 'md', asChild = false, children = '', isLoading = false, className }) => {
   const Heading = asChild ? Slot : 'span'
   return <Heading className={clsx("capitalize", className, {
       'text-2xl': size === 'sm', // 23px

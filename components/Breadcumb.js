@@ -2,13 +2,13 @@ import { useRouter } from "next/router"
 import Text from "@components/Text"
 import Button from "@components/Button"
 
-function pathAsArray(argPath) {
+const pathAsArray = (argPath) => {
   let path = argPath.split('/')
   path = path.slice(1, path.length)
   return path
 }
 
-export default function Breadcumb() {
+const Breadcumb = () => {
   const router = useRouter()
   const pathArr = pathAsArray(router.asPath)
   const path = []
@@ -39,3 +39,5 @@ export default function Breadcumb() {
     {path.map((Path) => Path)}
   </div>
 }
+
+export default Breadcumb

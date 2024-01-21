@@ -14,7 +14,6 @@ const App = ({ Component, pageProps }) => {
 
   useTheme()
   useProgress()
-
   useEventListener('keydown', () => {
     if (!document.activeElement) {
       window.focus()

@@ -1,6 +1,6 @@
 import { Slot } from "@radix-ui/react-slot"
 
-function Animation({ duration, from, to, name, children, asChild, ...props }) {
+const Animation = ({ duration, from, to, name, children, asChild, ...props }) => {
   const Element = asChild ? Slot : 'div'
   return <Element
     className={name}

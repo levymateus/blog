@@ -5,7 +5,7 @@ import Markdown from "@components/Markdown"
 import Text from "@components/Text"
 import client from "@utils/client"
 
-function Snippet({ title, description, content }) {
+const Snippet = ({ title, description, content }) => {
   return <div className="mt-12">
     <div className="flex flex-col">
       <Heading size="xl">{title}</Heading>
@@ -15,7 +15,7 @@ function Snippet({ title, description, content }) {
   </div>
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
   const snippets = await client.fetch(`*[_type == "snippet"]{
     "slug": slug.current
   }`)
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
+export const getStaticProps = async (context) => {
   const snippet = await client.fetch(`*[_type == "snippet" && slug.current == "${context.params.slug}"][0]{title, description, content}`)
   return { props: snippet }
 }

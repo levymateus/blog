@@ -1,6 +1,6 @@
 import clsx from "clsx"
 
-function Button({ variant = 'primary', children, ...props }) {
+const Button = ({ variant = 'primary', children, ...props }) => {
   return <button
     type="button"
     className={clsx("flex rounded", {

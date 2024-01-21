@@ -1,4 +1,4 @@
-function Error(props) {
+const Error = (props) => {
   return <div>
       Error: {props.error.message}
     <details>

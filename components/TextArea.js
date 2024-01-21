@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { useRef } from "react"
 
-function TextArea({ ...props }) {
+const TextArea = ({ ...props }) => {
   const ref = useRef()
   return <>
     <textarea

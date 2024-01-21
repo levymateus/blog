@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react"
 
-function useList(initialState = []) {
+const useList = (initialState = []) => {
   const [list, set] = useState(initialState)
 
   const forEach = useCallback((callback) => {
